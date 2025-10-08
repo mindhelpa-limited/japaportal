@@ -1,43 +1,38 @@
 'use client';
 import React, { useState } from 'react';
+import { useRouter } from 'next/navigation'; // <-- 1. IMPORT useRouter
 
-// --- SVG Icons (to keep it self-contained) ---
+// --- SVG Icons (No changes here, kept for completeness) ---
 const ArrowRightIcon = ({ className = "w-6 h-6" }) => (
     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className={className}>
         <path strokeLinecap="round" strokeLinejoin="round" d="M17.25 8.25L21 12m0 0l-3.75 3.75M21 12H3" />
     </svg>
 );
-
 const DocumentTextIcon = ({ className = "w-8 h-8" }) => (
     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className={className}>
         <path strokeLinecap="round" strokeLinejoin="round" d="M19.5 14.25v-2.625a3.375 3.375 0 00-3.375-3.375h-1.5A1.125 1.125 0 0113.5 7.125v-1.5a3.375 3.375 0 00-3.375-3.375H8.25m2.25 0H5.625c-.621 0-1.125.504-1.125 1.125v17.25c0 .621.504 1.125 1.125 1.125h12.75c.621 0 1.125-.504 1.125-1.125V11.25a9 9 0 00-9-9z" />
     </svg>
 );
-
 const SparklesIcon = ({ className = "w-8 h-8" }) => (
     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className={className}>
         <path strokeLinecap="round" strokeLinejoin="round" d="M9.813 15.904L9 18.75l-.813-2.846a4.5 4.5 0 00-3.09-3.09L2.25 12l2.846-.813a4.5 4.5 0 003.09-3.09L9 5.25l.813 2.846a4.5 4.5 0 003.09 3.09L15.75 12l-2.846.813a4.5 4.5 0 00-3.09 3.09zM18.259 8.715L18 9.75l-.259-1.035a3.375 3.375 0 00-2.455-2.456L14.25 6l1.036-.259a3.375 3.375 0 002.455-2.456L18 2.25l.259 1.035a3.375 3.375 0 002.456 2.456L21.75 6l-1.035.259a3.375 3.375 0 00-2.456 2.456zM16.898 20.562L16.25 22.5l-.648-1.938a3.375 3.375 0 00-2.6-2.6L11.25 18l1.938-.648a3.375 3.375 0 002.6-2.6l.648-1.938 1.938.648a3.375 3.375 0 002.6 2.6l.648 1.938-.648 1.938a3.375 3.375 0 00-2.6 2.6L18.75 22.5l-1.852-1.938z" />
     </svg>
 );
-
 const BookOpenIcon = ({ className = "w-8 h-8" }) => (
     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className={className}>
         <path strokeLinecap="round" strokeLinejoin="round" d="M12 6.042A8.967 8.967 0 006 3.75c-1.052 0-2.062.18-3 .512v14.25A8.987 8.987 0 016 18c2.305 0 4.408.867 6 2.292m0-14.25a8.966 8.966 0 016-2.292c1.052 0 2.062.18 3 .512v14.25A8.987 8.987 0 0018 18a8.967 8.967 0 00-6 2.292m0-14.25v14.25" />
     </svg>
 );
-
 const ChevronDownIcon = ({ className = "w-4 h-4" }) => (
     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor" className={className}>
         <path strokeLinecap="round" strokeLinejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5" />
     </svg>
 );
-
 const MenuIcon = ({ className = "w-6 h-6" }) => (
   <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="1.5" stroke="currentColor" className={className} >
     <path strokeLinecap="round" strokeLinejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
   </svg>
 );
-
 const XIcon = ({ className = "w-6 h-6" }) => (
     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className={className}>
         <path strokeLinecap="round" strokeLinejoin="round" d="M6 18L18 6M6 6l12 12" />
@@ -47,6 +42,23 @@ const XIcon = ({ className = "w-6 h-6" }) => (
 
 export default function HomePage() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  
+  // --- 2. ADD STATE & ROUTER ---
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
+  const router = useRouter();
+  
+  // --- 3. ADD EVENT HANDLERS ---
+  const handleLogin = () => {
+    router.push('/login');
+  };
+  
+  const handleLogout = () => {
+    // In a real app, you would clear tokens, etc.
+    setIsLoggedIn(false); 
+  };
+  
+  // To test the "Logout" view, temporarily set the initial state like this:
+  // const [isLoggedIn, setIsLoggedIn] = useState(true);
 
   return (
     <div className="bg-slate-900 text-white font-sans">
@@ -76,10 +88,23 @@ export default function HomePage() {
             <a href="/contact" className="hover:text-indigo-400 transition-colors">Contact</a>
           </nav>
 
+          {/* --- 4. DYNAMIC DESKTOP BUTTON --- */}
           <div className="hidden md:flex">
-             <a href="/resume-builder" className="bg-indigo-500 hover:bg-indigo-400 text-white font-semibold py-2 px-4 rounded-lg transition-colors text-sm">
-               Get Started
-             </a>
+            {isLoggedIn ? (
+                <button 
+                    onClick={handleLogout}
+                    className="bg-red-500 hover:bg-red-400 text-white font-semibold py-2 px-4 rounded-lg transition-colors text-sm"
+                >
+                    Logout
+                </button>
+            ) : (
+                <button 
+                    onClick={handleLogin}
+                    className="bg-indigo-500 hover:bg-indigo-400 text-white font-semibold py-2 px-4 rounded-lg transition-colors text-sm"
+                >
+                    Login
+                </button>
+            )}
           </div>
 
           {/* Mobile Menu Button */}
@@ -101,9 +126,23 @@ export default function HomePage() {
                 <a href="/dashboard" className="block py-2 hover:text-indigo-400 transition-colors">Dashboard</a>
                 <a href="/pricing" className="block py-2 hover:text-indigo-400 transition-colors">Pricing</a>
                 <a href="/contact" className="block py-2 hover:text-indigo-400 transition-colors">Contact</a>
-                <a href="/resume-builder" className="block w-full mt-2 bg-indigo-500 hover:bg-indigo-400 text-white font-semibold py-2 px-4 rounded-lg transition-colors">
-                  Get Started
-                </a>
+
+                {/* --- 5. DYNAMIC MOBILE BUTTON --- */}
+                {isLoggedIn ? (
+                    <button 
+                        onClick={handleLogout}
+                        className="block w-full mt-2 bg-red-500 hover:bg-red-400 text-white font-semibold py-2 px-4 rounded-lg transition-colors"
+                    >
+                        Logout
+                    </button>
+                ) : (
+                    <button 
+                        onClick={handleLogin}
+                        className="block w-full mt-2 bg-indigo-500 hover:bg-indigo-400 text-white font-semibold py-2 px-4 rounded-lg transition-colors"
+                    >
+                        Login
+                    </button>
+                )}
             </nav>
         )}
       </header>
