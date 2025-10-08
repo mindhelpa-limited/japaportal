@@ -183,7 +183,7 @@ export default function AboutPage() {
                     Create your international resume, get your questions answered, and take the next confident step towards your new life abroad.
                 </p>
                 <a 
-                    href="/resume-builder" 
+                    href="/pricing" 
                     className="mt-8 inline-block rounded-lg bg-indigo-500 px-8 py-3 text-base font-semibold text-white shadow-lg hover:bg-indigo-400 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-500 transition-transform hover:scale-105"
                 >
                     Get Started Now

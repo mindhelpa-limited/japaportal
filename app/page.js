@@ -51,7 +51,7 @@ export default function HomePage() {
             <a href="/resume-builder" className="inline-flex items-center justify-center gap-2 rounded-lg bg-indigo-500 px-8 py-3 text-base font-semibold text-white shadow-lg hover:bg-indigo-400 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-500 transition-transform hover:scale-105">
               Build Your Resume Now <ArrowRightIcon className="w-5 h-5"/>
             </a>
-            <a href="#features" className="inline-flex items-center justify-center rounded-lg bg-white/10 px-8 py-3 text-base font-semibold text-white hover:bg-white/20 transition-transform hover:scale-105">
+            <a href="/about" className="inline-flex items-center justify-center rounded-lg bg-white/10 px-8 py-3 text-base font-semibold text-white hover:bg-white/20 transition-transform hover:scale-105">
               Learn More
             </a>
           </div>
@@ -75,13 +75,13 @@ export default function HomePage() {
                         icon={<SparklesIcon className="text-purple-400 w-10 h-10"/>}
                         title="Ask Japa AI"
                         description="Have questions about visas, interviews, or cultural norms? Get instant, intelligent answers from our AI trained on immigration data."
-                        link="#ask-ai"
+                        link="/dashboard/ask-ai"
                     />
                     <FeatureCard
                         icon={<BookOpenIcon className="text-sky-400 w-10 h-10"/>}
                         title="The Ultimate Japa Ebook"
                         description="Your go-to guide. This resource is packed with checklists, tips, and expert advice to ensure a smooth transition abroad."
-                        link="#ebook"
+                        link="/ebook"
                     />
                 </div>
             </div>
@@ -100,9 +100,9 @@ export default function HomePage() {
                         </p>
                         <div className="mt-6">
                             <input type="text" placeholder="e.g., How do I answer 'Why this country?' in an interview?" className="w-full bg-slate-700/50 border border-white/10 rounded-lg px-4 py-3 text-white placeholder-slate-400 focus:ring-2 focus:ring-indigo-400 focus:border-indigo-400 outline-none"/>
-                            <button className="mt-3 w-full bg-indigo-500 hover:bg-indigo-400 text-white font-semibold py-3 px-4 rounded-lg transition-colors">
+                            <a href="/dashboard/ask-ai" className="mt-3 block w-full text-center bg-indigo-500 hover:bg-indigo-400 text-white font-semibold py-3 px-4 rounded-lg transition-colors">
                                 Get Your Answer
-                            </button>
+                            </a>
                         </div>
                     </div>
                 </div>
@@ -119,9 +119,9 @@ export default function HomePage() {
                 <div className="text-left">
                      <h3 className="text-3xl font-bold tracking-tight sm:text-4xl">Your Comprehensive <span className="text-transparent bg-clip-text bg-gradient-to-r from-sky-400 to-indigo-500">Guide to Success</span></h3>
                     <p className="mt-4 text-lg text-slate-400">We've compiled everything you need to know into one essential ebook. Consider it your personal roadmap to a new life abroad. Download it for free and start preparing today.</p>
-                    <button className="mt-8 inline-flex items-center gap-2 rounded-lg bg-indigo-500 px-8 py-3 text-base font-semibold text-white shadow-lg hover:bg-indigo-400 transition-transform hover:scale-105">
+                    <a href="/ebook" className="mt-8 inline-flex items-center gap-2 rounded-lg bg-indigo-500 px-8 py-3 text-base font-semibold text-white shadow-lg hover:bg-indigo-400 transition-transform hover:scale-105">
                       Download The Ebook
-                    </button>
+                    </a>
                 </div>
                  <div className="relative flex justify-center">
                     <div className="absolute inset-0 bg-gradient-to-tr from-sky-500/20 to-indigo-500/20 rounded-2xl blur-3xl -translate-y-4"></div>

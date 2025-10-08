@@ -68,7 +68,7 @@ export default function AskAiPage() {
                             </motion.p>
                              <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8, delay: 0.4 }}>
                                 <a
-                                    href="#pricing"
+                                    href="/pricing"
                                     className="mt-10 inline-block rounded-lg bg-gradient-to-r from-indigo-500 to-purple-500 px-8 py-4 text-base font-semibold text-white shadow-2xl hover:shadow-indigo-500/50 transition-all duration-300 transform hover:scale-105"
                                 >
                                     Ask Your First Question

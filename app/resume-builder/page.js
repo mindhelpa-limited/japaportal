@@ -92,10 +92,10 @@ export default function ResumeBuilderPage() {
                                 Our intelligent builder helps you craft a professional, ATS-friendly resume that stands out to recruiters and gets you hired faster.
                             </p>
                             <a
-                                href="/builder/app" // Link to the actual builder tool
+                                href="/pricing" // Link to the actual builder tool
                                 className="mt-10 inline-block rounded-lg bg-gradient-to-r from-indigo-500 to-purple-500 px-8 py-4 text-base font-semibold text-white shadow-2xl hover:shadow-indigo-500/50 transition-all duration-300 transform hover:scale-105"
                             >
-                                Start Building for Free
+                                Start Building
                             </a>
                         </motion.div>
                         <motion.div initial={{ opacity: 0, y: 50, scale: 0.8 }} animate={{ opacity: 1, y: 0, scale: 1 }} transition={{ duration: 1.0, delay: 0.3 }} className="mt-12">
@@ -193,7 +193,7 @@ export default function ResumeBuilderPage() {
                             Stop wrestling with Word templates. Start building a resume that opens doors.
                         </p>
                         <a 
-                            href="/builder/app" 
+                            href="/pricing" 
                             className="mt-8 inline-block rounded-lg bg-white px-8 py-3 text-base font-semibold text-indigo-600 shadow-lg hover:bg-slate-100 transition-transform hover:scale-105"
                         >
                             Build My Resume Now

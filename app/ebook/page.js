@@ -66,7 +66,7 @@ export default function EbookPage() {
                             </motion.p>
                              <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8, delay: 0.4 }}>
                                 <a
-                                    href="#download"
+                                    href="/pricing"
                                     className="mt-10 inline-block rounded-lg bg-gradient-to-r from-sky-500 to-indigo-500 px-8 py-4 text-base font-semibold text-white shadow-2xl hover:shadow-sky-500/50 transition-all duration-300 transform hover:scale-105"
                                 >
                                     Download The Ebook Now
@@ -138,7 +138,7 @@ export default function EbookPage() {
                                 Get instant access to the guide that has helped thousands of people successfully start their new lives abroad. Your journey begins now.
                             </p>
                             <a 
-                                href="/checkout" // Link to your payment/download page
+                                href="/pricing" // Link to your payment/download page
                                 className="mt-8 inline-block rounded-lg bg-white px-10 py-4 text-base font-semibold text-indigo-600 shadow-lg hover:bg-slate-100 transition-transform hover:scale-105"
                             >
                                 Download Your Ebook
